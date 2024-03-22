@@ -10,6 +10,7 @@ using VillaAPI.Models;
 
 namespace VillaAPI.Controllers
 {
+    // Stopped at the video 2:16:36 after creating a custom logger
 
     [Route("api/VillaAPI")]
     [ApiController]
@@ -138,6 +139,9 @@ namespace VillaAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
+            _context.Villas.Update(villa);
+            _context.SaveChanges();
+
             return NoContent();
 
         }   // Patch Request is not working 1:23 in course REST API
